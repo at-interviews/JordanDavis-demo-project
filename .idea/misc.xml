@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../.gradle/caches/transforms-3/7b06e149770546d3b10997fa2dccb508/transformed/material-1.6.1/res/drawable/navigation_empty_icon.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/alltrails-sample/app/src/main/res/layout/activity_main.xml" value="0.30027173913043476" />
+        <entry key="..\:/AndroidProjects/alltrails-sample/app/src/main/res/layout/content_main.xml" value="0.30027173913043476" />
+        <entry key="..\:/AndroidProjects/alltrails-sample/app/src/main/res/layout/fragment_first.xml" value="0.55" />
+        <entry key="..\:/AndroidProjects/alltrails-sample/app/src/main/res/layout/fragment_second.xml" value="0.30027173913043476" />
+        <entry key="..\:/AndroidProjects/alltrails-sample/app/src/main/res/layout/restaurant_detail_bottom_sheet.xml" value="0.3177083333333333" />
+        <entry key="..\:/AndroidProjects/alltrails-sample/app/src/main/res/layout/restaurant_list_item.xml" value="0.30027173913043476" />
+        <entry key="..\:/AndroidProjects/turo-sample/app/src/main/res/layout/activity_main.xml" value="0.38179347826086957" />
+        <entry key="..\:/AndroidProjects/turo-sample/app/src/main/res/layout/restaurant_list_item.xml" value="0.3177083333333333" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.13949275362318841" />
+        <entry key="app/src/main/res/layout/employee_list_item.xml" value="0.22580645161290322" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.2871376811594203" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.2871376811594203" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
