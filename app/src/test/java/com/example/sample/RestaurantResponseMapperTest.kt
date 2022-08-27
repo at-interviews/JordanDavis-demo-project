@@ -1,10 +1,14 @@
 package com.example.sample
 
+import com.example.sample.network.model.GeometryResponse
+import com.example.sample.network.model.LocationResponse
 import com.example.sample.network.model.RestaurantResponse
+import com.example.sample.network.model.RestaurantsResponse
 import com.example.sample.repository.RestaurantResponseMapper
 import com.example.sample.repository.RestaurantsResult
 import com.example.sample.ui.main.model.Restaurant
 import org.junit.Test
+import retrofit2.Response
 
 class RestaurantResponseMapperTest {
     @Test
@@ -19,7 +23,7 @@ class RestaurantResponseMapperTest {
 
     @Test
     fun mapResponseToResult_SuccessEmpty() {
-        val data = emptyList<RestaurantResponse>()
+        val data = Response.success(RestaurantsResponse(html_attributions = listOf(), status = "OK", emptyList()))
         val actual = RestaurantResponseMapper.mapResponseToResult(data)
         val expected = RestaurantsResult.Success(emptyList())
 
@@ -40,16 +44,13 @@ class RestaurantResponseMapperTest {
         val expected = listOf(
             Restaurant(
                 name = "name",
-                distanceInMeters = "100",
-                phoneNumber = "1234",
-                isOpen = false
+                businessStatus = "operational",
+                priceLevel = 3,
+                rating = 3,
+                iconUrl = "url",
+                longitude = 100.0,
+                latitude = 100.0
             ),
-            Restaurant(
-                name = "name2",
-                distanceInMeters = "2500",
-                phoneNumber = "12345",
-                isOpen = true
-            )
         )
 
         val actual = RestaurantResponseMapper.mapToRestaurant(createSuccessRestaurantResponseList())
@@ -58,25 +59,24 @@ class RestaurantResponseMapperTest {
     }
 
     private fun areRestaurantsEqual(restaurantOne: Restaurant, restaurantTwo: Restaurant): Boolean {
-        return restaurantOne.name == restaurantTwo.name
-                && restaurantOne.phoneNumber == restaurantTwo.phoneNumber
+        return restaurantOne.name == restaurantTwo.name && restaurantOne.latitude == restaurantTwo.latitude
     }
 
-    private fun createSuccessRestaurantResponseList(): List<RestaurantResponse> {
-        return listOf(
-            RestaurantResponse(
-                id = "id",
-                name = "name",
-                phoneNumber = "1234",
-                distanceInMeters = 100f,
-                isClosed = false,
-            ),
-            RestaurantResponse(
-                id = "id2",
-                name = "name2",
-                phoneNumber = "12345",
-                distanceInMeters = 2500f,
-                isClosed = true,
+    private fun createSuccessRestaurantResponseList(): Response<RestaurantsResponse?>? {
+        return Response.success(
+            RestaurantsResponse(
+                listOf(),
+                "OK",
+                listOf(
+                    RestaurantResponse(
+                        name = "name",
+                        businessStatus = "operational",
+                        priceLevel = 3,
+                        rating = 3f,
+                        iconUrl = "url",
+                        geometry = GeometryResponse(location = LocationResponse(100.0, 100.0))
+                    )
+                )
             )
         )
     }

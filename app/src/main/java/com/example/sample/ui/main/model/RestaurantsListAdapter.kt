@@ -1,19 +1,15 @@
 package com.example.sample.ui.main.model
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.compose.ui.text.capitalize
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.sample.R
-import com.example.sample.ui.main.util.ConverterUtil
 import java.util.*
-import kotlin.math.roundToInt
 
 class RestaurantsListAdapter(val onItemClicked: (RestaurantListItemUiModel) -> Unit) : RecyclerView.Adapter<RestaurantsListAdapter.ViewHolder>() {
     private var listItems: List<RestaurantListItemUiModel> = listOf()
